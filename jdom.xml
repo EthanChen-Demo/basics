@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <hello sohu="www.sohu.com">
+        <world test="hehe">
+            <!--This is my comments-->
+            <aaa a="b" x="y" gg="hh">text content</aaa>
+        </world>
+    </hello>
+</root>
+
