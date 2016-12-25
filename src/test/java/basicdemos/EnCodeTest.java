@@ -18,27 +18,28 @@ public class EnCodeTest {
     
     public static void main(String[] args) throws UnsupportedEncodingException {
         /**
-         * 由于截首导致信息不完整？？
+         * 由于截首导致信息不完整？？？？？
          */
         System.out.println("-----------ISO8859-1----------------");
         String Str = "中文123";
         byte[] bytes = Str.getBytes("ISO8859-1");//字符串先用ISO8859-1编码
         String mm = new String(bytes,"UTF-8"  );//字符串再用ISO8859-1解码
-        System.out.println("mm: " + mm);  // mm: ??123
-        System.out.println(bytes.length);  
-        System.out.println(Str.getBytes().length);
-        System.out.println("---------------------------");
+        System.out.println(Str + "-->ISO8859-1-->UTF-8," + "mm: " + mm);  // mm: ??123
+        System.out.println(Str + "-->ISO8859-1,length:" + bytes.length);  
+        System.out.println(Str + "-->Str.getBytes().length:" + Str.getBytes().length);  
+        System.out.println("-------------------------");
         for (int i = 0; i < bytes.length; i++) {
             System.out.print(bytes[i]);
             System.out.print(";");
             System.out.println((char)(bytes[i]));
         }
         
+        System.out.println("----------  UTF-8 ----------------");
         bytes = Str.getBytes("UTF-8");//字符串先用ISO8859-1编码
         mm = new String(bytes,"ISO8859-1"  );//字符串再用ISO8859-1解码
-        System.out.println("mm: " + mm);  // mm: ??123
-        System.out.println(bytes.length);  
-        System.out.println(Str.getBytes().length);
+        System.out.println(Str + "-->UTF-8-->ISO8859-1," + "mm: " + mm);  // mm: ??123 
+        System.out.println(Str + "-->utf-8,length:" + bytes.length); 
+        System.out.println(Str + "-->Str.getBytes().length:" + Str.getBytes().length); 
         System.out.println("---------------------------");
         for (int i = 0; i < bytes.length; i++) {
             System.out.print(bytes[i]);

@@ -1,5 +1,14 @@
 package com.distributed.mq.rocketmq;
 
+import java.util.List;
+
+import com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer;
+import com.alibaba.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
+import com.alibaba.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
+import com.alibaba.rocketmq.client.consumer.listener.MessageListenerConcurrently;
+import com.alibaba.rocketmq.client.exception.MQClientException;
+import com.alibaba.rocketmq.common.message.MessageExt;
+
 public class PushConsumer {
 
     /**
@@ -32,7 +41,6 @@ public class PushConsumer {
             /**
              * 默认msgs里只有一条消息，可以通过设置consumeMessageBatchMaxSize参数来批量接收消息
              */
-            @Override
             public ConsumeConcurrentlyStatus consumeMessage(
                     List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
                 System.out.println(Thread.currentThread().getName()
