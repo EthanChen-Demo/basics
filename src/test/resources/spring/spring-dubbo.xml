@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://code.alibabatech.com/schema/dubbo
+                        http://souche.oss-cn-hangzhou.aliyuncs.com/files/dubbo/dubbo.xsd">
+    
+    <import resource="spring-dubbo-export.xml"></import>
+    <import resource="spring-dubbo-import.xml"></import> 
+    
+    <dubbo:application name="${dubbo.application}"  />
+    <dubbo:registry address="${dubbo.registry}" />
+    <dubbo:provider export="${dubbo.export}" token="${dubbo.token}"/>
+    <dubbo:protocol name="dubbo" port="${dubbo.port}" host="${dubbo.host}" />
+    <dubbo:monitor protocol="registry"/>
+    <dubbo:consumer timeout="${dubbo.timeout}" />
+    <dubbo:doc name="${dubbo.application}" enable="${dubbo.doc.enable}" version="${application.version}"  groupId="${application.groupId}" artifactId="${application.artifactId}" address="${dubbo.registry}"/>
+    
+</beans>
+ 
+<!-- 
+几点说明：
+application-dubbo-export.xml 用于定义本应用要导出的接口
+application-dubbo-import.xml 用于定义本应用要消费的接口信息
+dubbo:application   用来定义本应用的dubbo应用名称
+dubbo:registry      用来定义dubbo注册中心所采用的协议及注册中心的地址
+dubbo:provider      里面的export参数用来决定需不需要往注册中心导出相应的服务。在本地调试时，可以导出标识设为false，以避免别人不小心调用到你本机的服务上来；token表示需要token的信息
+dubbo:consumer      定义消费的一些基本信息，如接口超时配置
+dubbo:doc           定义注册中心的文档，其中groupId、artifactId以及version对应到pom的配置，以便告诉别人，当面我这个服务提供的api接口的pom信息 
+-->
+
+
