@@ -57,30 +57,9 @@ public class HtmlParserTest {
 		}
 	}
 
-	public static void main1(String[] args) {
-
-		String szContent = openFile("E:/My Sites/HTMLParserTester.html");
-		System.out.println(szContent);
-		try {
-
-			// Parser parser = Parser.createParser(szContent, ENCODE);
-
-			Parser parser = new Parser(
-					(HttpURLConnection) (new URL("http://127.0.0.1:8080/HTMLParserTester.html")).openConnection());
-
-			TextExtractingVisitor visitor = new TextExtractingVisitor();
-			parser.visitAllNodesWith(visitor);
-			String textInPage = visitor.getExtractedText();
-
-			message(textInPage);
-
-		} catch (Exception e) {
-		}
-	}
-
 	public static void main(String[] args) throws IOException, ParserException {
 
-		// 1.网页HTML
+		// 1.缃戦〉HTML
 		InputStreamReader isr = new InputStreamReader(new ClassPathResource(path).getInputStream());
 		BufferedReader br = new BufferedReader(isr);
 
@@ -107,7 +86,7 @@ public class HtmlParserTest {
 
 	private static List<PrecisePromotionParseResultRow> parseHtmlDocument(String allContent) throws ParserException {
 
-		// 使用后HTML Parser 控件
+		// 浣跨敤鍚嶩TML Parser 鎺т欢
 		Parser myParser;
 		NodeList nodeList = null;
 		myParser = Parser.createParser(allContent, "utf-8");
@@ -117,13 +96,13 @@ public class HtmlParserTest {
 		lastFilter.setPredicates(new NodeFilter[] { tableFilter });
 		try {
 
-			// 获取标签为table的节点列表
+			// 鑾峰彇鏍囩涓簍able鐨勮妭鐐瑰垪琛�
 			nodeList = myParser.parse(lastFilter);
 			TableTag tag = (TableTag) nodeList.elementAt(0);
 
 			TableRow[] rows = tag.getRows();
 
-			// 循环读取每一行
+			// 寰幆璇诲彇姣忎竴琛�
 			List<PrecisePromotionParseResultRow> tableContents = Lists.newArrayListWithCapacity(rows.length);
 			for (int j = 1; j < rows.length; j++) {
 				TableRow tr = (TableRow) rows[j];
@@ -134,13 +113,13 @@ public class HtmlParserTest {
 			return tableContents;
 		} catch (ParserException e) {
 			e.printStackTrace();
-			throw new RuntimeException("html解析失败！", e);
+			throw new RuntimeException("html瑙ｆ瀽澶辫触锛�", e);
 		}
 
 	}
 
 	/**
-	 * 计算分页数。
+	 * 璁＄畻鍒嗛〉鏁般��
 	 * 
 	 * @param myParser
 	 * @return
@@ -148,7 +127,7 @@ public class HtmlParserTest {
 	 */
 	private static int parsePageCount(String allContent) throws ParserException {
 
-		// 使用后HTML Parser 控件
+		// 浣跨敤鍚嶩TML Parser 鎺т欢
 		Parser myParser;
 		myParser = Parser.createParser(allContent, "utf-8");
 
