@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- <modelVersion>4.0.0</modelVersion> <groupId>com.universe.programmodles.servlet</groupId> 
+		<artifactId>basicdemos</artifactId> <packaging>war</packaging> <version>1.0-SNAPSHOT</version> 
+		<name>basicdemos Maven Webapp</name> <url>http://maven.apache.org</url> -->
+
+	<!-- 用来指定父工程 -->
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.universe.demo</groupId>
+		<artifactId>basics</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>zookeeper</artifactId>
+	<packaging>war</packaging>
+	<name>Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<org.springframework-version>4.2.2.RELEASE</org.springframework-version>
+		<log4j-version>1.2.13</log4j-version>
+		<junit-version>4.12</junit-version>
+		<servlet-version>2.5</servlet-version>
+		<commonLog-version>1.1</commonLog-version>
+		<mybatis-version>3.2.5</mybatis-version>
+		<mybatis-spring-version>1.1.1</mybatis-spring-version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+
+		<!-- Commons-Logging -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>${commonLog-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.servlet</groupId>
+					<artifactId>servlet-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j-version}</version>
+		</dependency>
+
+	</dependencies>
+</project>
