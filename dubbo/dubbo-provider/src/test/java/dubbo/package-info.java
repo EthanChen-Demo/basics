@@ -1,7 +1,0 @@
-
-/**
- * 
- * @author ethan
- *
- */
-package dubbo;

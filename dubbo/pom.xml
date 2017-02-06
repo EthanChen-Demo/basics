@@ -14,8 +14,8 @@
 	<url>http://maven.apache.org</url>
 
 	<modules>
-		<module>dubbo-client</module>
-		<module>dubbo-provider</module>
+		<module>dubboclient</module>
+		<module>demodubboserver</module>
 	</modules>
 
 </project>
