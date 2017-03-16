@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- <modelVersion>4.0.0</modelVersion> <groupId>com.universe.programmodles.servlet</groupId> 
+		<artifactId>basicdemos</artifactId> <packaging>war</packaging> <version>1.0-SNAPSHOT</version> 
+		<name>basicdemos Maven Webapp</name> <url>http://maven.apache.org</url> -->
+
+	<!-- 用来指定父工程 -->
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.universe.demo</groupId>
+		<artifactId>basics</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>easymock</artifactId>
+	<packaging>war</packaging>
+	<name>Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.easymock/easymock -->
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/cglib/cglib-nodep -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>2.1_3</version>
+		</dependency>
+
+
+
+	</dependencies>
+
+</project>

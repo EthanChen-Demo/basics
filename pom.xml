@@ -17,7 +17,9 @@
 	<modules>
 		<module>old</module>
 		<module>zookeeper</module>
+		<module>es</module>
 		<module>dubbo</module>
+		<module>easymock</module>
 	</modules>
 
 </project>
