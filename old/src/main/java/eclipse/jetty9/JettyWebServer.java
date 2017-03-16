@@ -3,7 +3,6 @@ package eclipse.jetty9;
 import org.eclipse.jetty.server.*;
 import org.eclipse.jetty.server.handler.HandlerCollection;
 import org.eclipse.jetty.server.handler.RequestLogHandler;
-import org.eclipse.jetty.server.handler.gzip.GzipHandler;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
 import org.eclipse.jetty.util.thread.ThreadPool;
 import org.eclipse.jetty.webapp.WebAppContext;
@@ -77,7 +76,7 @@ public class JettyWebServer {
 	}
 
 	private RequestLog createRequestLog() {
-		// 记录访问日志的处理
+		// 璁板綍璁块棶鏃ュ織鐨勫鐞�
 		NCSARequestLog requestLog = new NCSARequestLog();
 		requestLog.setFilename(logDir + "/yyyy-mm-dd.log");
 		requestLog.setRetainDays(90);

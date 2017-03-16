@@ -1,6 +1,5 @@
 
 /**
- * @author Ethan.D Chen О©╫О©╫О©╫О©╫10:01:44
+ * @author Ethan.D Chen обнГ10:01:44
  */
 package com.distributed.mq.rocketmq;
-

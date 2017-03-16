@@ -2,6 +2,7 @@ package sqlBuilder;
 
 import java.sql.Timestamp;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import sqlBuilder.test.PlatformAccountInfoVO;
@@ -23,7 +24,7 @@ public class SqlBuilder {
 			tableName = clazz.getSimpleName();
 		}
 
-		Map<String, Class> tableFieldMap = new HashMap<String, Class>();
+		LinkedHashMap<String, Class> tableFieldMap = new LinkedHashMap<String, Class>();
 		java.lang.reflect.Field[] fields = clazz.getDeclaredFields();
 		for (int i = 0; i < fields.length; i++) {
 			String tableFieldName = null;
