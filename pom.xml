@@ -14,6 +14,16 @@
 		<module>zookeeper</module>
 		<module>es</module>
 		<module>dubbo</module>
+		<module>excel</module>
+		<module>h2</module>
+		<module>htmlparser</module>
+		<module>httpclient</module>
+		<module>jdk</module>
+		<module>jetty</module>
+		<module>rocketmq</module>
+		<module>sevlet</module>
+		<module>xml</module>
+		<module>canal</module>
 		<module>easymock</module>
 	</modules>
 
