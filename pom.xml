@@ -16,6 +16,7 @@
 		<module>dubbo</module>
 		<module>excel</module>
 		<module>h2</module>
+		<module>fastjson</module>
 		<module>htmlparser</module>
 		<module>httpclient</module>
 		<module>jdk</module>
